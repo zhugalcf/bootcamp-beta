@@ -8,11 +8,10 @@ public class Pikeman extends Creature{
         setDefence(30);
         setLevel(2);
         setSpeed(10);
-        setQuantity(40);
     }
 
     @Override
     public int getDamage() {
-        return 0;
+        return 15;
     }
 }

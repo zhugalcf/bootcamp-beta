@@ -8,11 +8,10 @@ public class Angel extends Creature {
         setDefence(50);
         setLevel(5);
         setSpeed(20);
-        setQuantity(10);
     }
 
     @Override
     public int getDamage() {
-        return 0;
+        return 10;
     }
 }

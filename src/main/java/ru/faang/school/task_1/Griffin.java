@@ -8,10 +8,9 @@ public class Griffin extends Creature{
         setDefence(70);
         setLevel(13);
         setSpeed(30);
-        setQuantity(5);
     }
     @Override
     public int getDamage() {
-        return 0;
+        return 15;
     }
 }

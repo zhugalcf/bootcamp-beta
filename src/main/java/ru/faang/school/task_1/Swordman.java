@@ -8,11 +8,10 @@ public class Swordman extends Creature{
         setDefence(50);
         setLevel(8);
         setSpeed(5);
-        setQuantity(15);
     }
 
     @Override
     public int getDamage() {
-        return 0;
+        return 30;
     }
 }
