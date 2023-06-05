@@ -15,12 +15,11 @@ public class Battlefield {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        double speedCoefficient = (double) (hero1.getArmySpeed() / hero2.getArmySpeed());  /* коэффициент скорости,
+        double speedCoefficient = (double)hero1.getArmySpeed() / hero2.getArmySpeed();  /* коэффициент скорости,
         снижает или увеличивает силу первого героя в зависимости от различия в скорости атаки 2х героев,
         у второго героя он берется за единицу */
-        double hero1Coefficient = (double) ((hero1.getArmyPower() * speedCoefficient) / hero2.getArmyDefence());
-        double hero2Coefficient = (double) (hero2.getArmyPower() / hero1.getArmyDefence());
-        System.out.println("Battle finished");
+        double hero1Coefficient = ((hero1.getArmyPower() * speedCoefficient) / hero2.getArmyDefence());
+        double hero2Coefficient = (double) hero2.getArmyPower() / hero1.getArmyDefence();
         return hero1Coefficient >= hero2Coefficient ? hero1 : hero2;
     }
 }

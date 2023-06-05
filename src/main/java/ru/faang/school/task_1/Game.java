@@ -5,10 +5,10 @@ public class Game {
         Battlefield battlefield = new Battlefield();
 
         battlefield.getHero1().addCreature(new Angel(),10);
-        battlefield.getHero1().addCreature(new Griffin(),20);
+        battlefield.getHero1().addCreature(new Griffin(),15);
 
-        battlefield.getHero2().addCreature(new Pikeman(),30);
-        battlefield.getHero2().addCreature(new Swordman(),25);
+        battlefield.getHero2().addCreature(new Pikeman(),15);
+        battlefield.getHero2().addCreature(new Swordman(),17);
         battlefield.getHero2().removeCreature(Swordman.class,5);
 
         System.out.println("Winner is: " + battlefield.battle().toString());

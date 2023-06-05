@@ -56,7 +56,7 @@ public class Hero {
     public int getArmySpeed(){
         int speed = 0;
         for (Creature creature: army){
-            speed += creature.getForce();
+            speed += creature.getSpeed();
         }
         return speed;
     }
