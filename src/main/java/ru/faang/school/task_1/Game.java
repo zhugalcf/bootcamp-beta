@@ -12,5 +12,6 @@ public class Game {
         battlefield.getHero2().removeCreature(Swordman.class,5);
 
         System.out.println("Winner is: " + battlefield.battle().toString());
+        System.out.println((double) (400 / 1700));
     }
 }
