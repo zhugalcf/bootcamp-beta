@@ -4,18 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class Hero {
     @Getter @Setter private String name;
     @Getter @Setter private String fraction;
     @Getter @Setter private int experience;
     @Getter @Setter private int level;
-    private List<Creature> army = new ArrayList<>();
-
-    private final static  String[] creatureClasses = {"Angel","Griffin","Swordman","Pikeman"};
+    @Getter private List<Creature> army = new ArrayList<>();
 
     public Hero(String name, String fraction, int experience, int level) {
         this.name = name;
@@ -24,12 +20,9 @@ public class Hero {
         this.level = level;
     }
 
-    public void addCreature(String className, int quantity){
-        for (int i = 0; i < quantity ; i++) {
-            switch (className){
-                case "Angel":
-                    army.add(new Angel());
-            }
+    public void addCreature(Creature creature, int quantity) {
+        for (int i = 0; i < quantity; i++) {
+            army.add(creature);
         }
     }
 
@@ -38,13 +31,38 @@ public class Hero {
             for (Creature unit : army) {
                 if (unit.getClass() == creature) {
                     army.remove(unit);
+                    break;
                 }
             }
         }
     }
-    public void getArmy(){
+
+    public int getArmyPower(){
+        int power = 0;
         for (Creature creature: army){
-            System.out.println(creature.toString());
+            power += creature.getForce();
         }
+        return power;
+    }
+
+    public int getArmyDefence(){
+        int defence = 0;
+        for (Creature creature: army){
+            defence += creature.getDefence();
+        }
+        return defence;
+    }
+
+    public int getArmySpeed(){
+        int speed = 0;
+        for (Creature creature: army){
+            speed += creature.getForce();
+        }
+        return speed;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

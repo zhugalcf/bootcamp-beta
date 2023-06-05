@@ -2,10 +2,15 @@ package ru.faang.school.task_1;
 
 public class Game {
     public static void main(String[] args) {
-        Hero hero = new Hero("Sergey", "Fenix",10,20);
-        //hero.addCreature(new Griffin(),5);
-        hero.getArmy();
-        //System.out.println((new Reflections("task_1")).getSubTypesOf(Creature.class));
+        Battlefield battlefield = new Battlefield();
 
+        battlefield.getHero1().addCreature(new Angel(),10);
+        battlefield.getHero1().addCreature(new Griffin(),20);
+
+        battlefield.getHero2().addCreature(new Pikeman(),30);
+        battlefield.getHero2().addCreature(new Swordman(),25);
+        battlefield.getHero2().removeCreature(Swordman.class,5);
+
+        System.out.println("Winner is: " + battlefield.battle().toString());
     }
 }
